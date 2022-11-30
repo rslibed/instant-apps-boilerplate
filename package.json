@@ -1,0 +1,28 @@
+{
+  "name": "instant-apps-boilerplate",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "npm run mkdirT9nAssets && npm run copy && vite",
+    "build": "npm run mkdirT9nAssets && npm run copy && tsc && vite build",
+    "copy": " ncp ./src/t9n ./public/assets/t9n && ncp ./node_modules/@esri/calcite-components/dist/calcite/assets ./public/assets && ncp ./node_modules/@esri/instant-apps-components/dist/assets/t9n ./public/assets/t9n",
+    "mkdirT9nAssets": "mkdirp public/assets && mkdirp public/assets/t9n && mkdirp public/assets/components && mkdirp public/assets/components/t9n && ncp ./src/t9n ./public/assets/t9n",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "mkdirp": "^1.0.4",
+    "ncp": "^2.0.0",
+    "sass": "^1.56.1",
+    "typescript": "^4.6.4",
+    "vite": "^3.2.3",
+    "vite-tsconfig-paths": "^3.5.2"
+  },
+  "dependencies": {
+    "@arcgis/core": "^4.25.4",
+    "@esri/calcite-components": "^1.0.0-beta.98",
+    "@esri/instant-apps-components": "^1.0.0-beta.27",
+    "templates-common-library": "0.0.126-esm"
+  }
+}
